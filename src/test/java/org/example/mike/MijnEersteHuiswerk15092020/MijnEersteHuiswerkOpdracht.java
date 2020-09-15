@@ -7,49 +7,71 @@ public class MijnEersteHuiswerkOpdracht {
     //Tests die drie simpele pyramides met punt naar boven, beneden, rechts en links printen in verschillende niveaus en kolommen
     @Test
     void Print2DPyramidesMetPuntNaarBovenVanTweeDrieEnVijfNiveaus(){
-        printPyramideMetPuntNaarBovenVanTweeNiveaus();
+        print2DPyramideMetPuntNaarBovenVanTweeNiveaus();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarBovenVanDrieNiveaus();
+        print2DPyramideMetPuntNaarBovenVanDrieNiveaus();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarBovenVanVijfNiveaus();
+        print2DPyramideMetPuntNaarBovenVanVijfNiveaus();
     }
 
     @Test
     void Print2DPyramidesMetPuntNaarBenedenVanTweeDrieEnVijfNiveaus(){
-        printPyramideMetPuntNaarBenedenVanTweeNiveaus();
+        print2DPyramideMetPuntNaarBenedenVanTweeNiveaus();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarBenedenVanDrieNiveaus();
+        print2DPyramideMetPuntNaarBenedenVanDrieNiveaus();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarBenedenVanVijfNiveaus();
+        print2DPyramideMetPuntNaarBenedenVanVijfNiveaus();
     }
 
     @Test
     void Print2DPyramidesMetPuntNaarRechtsVanTweeDrieEnVijfKolommen(){
-        printPyramideMetPuntNaarRechtsVanTweeKolommen();
+        print2DPyramideMetPuntNaarRechtsVanTweeKolommen();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarRechtsVanDrieKolommen();
+        print2DPyramideMetPuntNaarRechtsVanDrieKolommen();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarRechtsVanVijfKolommen();
+        print2DPyramideMetPuntNaarRechtsVanVijfKolommen();
     }
-
 
     @Test
     void Print2DPyramidesMetPuntNaarLinksVanTweeDrieEnVijfKolommen(){
-        printPyramideMetPuntNaarLinksVanTweeKolommen();
+        print2DPyramideMetPuntNaarLinksVanTweeKolommen();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarLinksVanDrieKolommen();
+        print2DPyramideMetPuntNaarLinksVanDrieKolommen();
         voegWitRegelToe();
 
-        printPyramideMetPuntNaarLinksVanVijfKolommen();
-
+        print2DPyramideMetPuntNaarLinksVanVijfKolommen();
     }
+
+    //Tests die drie simpele holle pyramides op gevulde achtergrond met punt naar boven printen in verschillende niveaus en kolommen
+    @Test
+    void PrintHolle2DPyramidesGevuldeAchtergrondMetPuntNaarBovenVanTweeDrieEnVijfNiveaus(){
+        print2DHollePyramideGevuldeAchtergrondMetPuntNaarBovenVanTweeNiveaus();
+        voegWitRegelToe();
+
+        print2DHollePyramideGevuldeAchterGrondMetPuntNaarBovenVanDrieNiveaus();
+        voegWitRegelToe();
+
+        print2DHollePyramideGevuldeAchterGrondMetPuntNaarBovenVanVijfNiveaus();
+    }
+    @Test
+    void PrintHolle2DPyramidesGevuldeAchtergrondMetPuntNaarRechtsVanTweeDrieEnVijfNiveaus(){
+        print2DHollePyramideGevuldeAchtergrondMetPuntNaarRechtsVanTweeNiveaus();
+        voegWitRegelToe();
+
+        print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanDrieNiveaus();
+        voegWitRegelToe();
+
+        print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanVijfNiveaus();
+    }
+
+
 
     //Methodes
     void voegWitRegelToe(){
@@ -57,18 +79,16 @@ public class MijnEersteHuiswerkOpdracht {
     }
 
     //punt naar boven
-    void printPyramideMetPuntNaarBovenVanTweeNiveaus(){
+    void print2DPyramideMetPuntNaarBovenVanTweeNiveaus(){
         System.out.println(" + ");
         System.out.println("+++");
     }
-
-    void printPyramideMetPuntNaarBovenVanDrieNiveaus(){
+    void print2DPyramideMetPuntNaarBovenVanDrieNiveaus(){
         System.out.println("  +  ");
         System.out.println(" +++ ");
         System.out.println("+++++");
     }
-
-    void printPyramideMetPuntNaarBovenVanVijfNiveaus(){
+    void print2DPyramideMetPuntNaarBovenVanVijfNiveaus(){
         System.out.println("    +    ");
         System.out.println("   +++   ");
         System.out.println("  +++++  ");
@@ -77,18 +97,16 @@ public class MijnEersteHuiswerkOpdracht {
     }
 
     //punt naar beneden
-    void printPyramideMetPuntNaarBenedenVanTweeNiveaus(){
+    void print2DPyramideMetPuntNaarBenedenVanTweeNiveaus(){
         System.out.println("+++");
         System.out.println(" + ");
     }
-
-    void printPyramideMetPuntNaarBenedenVanDrieNiveaus(){
+    void print2DPyramideMetPuntNaarBenedenVanDrieNiveaus(){
         System.out.println("+++++");
         System.out.println(" +++ ");
         System.out.println("  +  ");
     }
-
-    void printPyramideMetPuntNaarBenedenVanVijfNiveaus(){
+    void print2DPyramideMetPuntNaarBenedenVanVijfNiveaus(){
         System.out.println("+++++++++");
         System.out.println(" +++++++ ");
         System.out.println("  +++++  ");
@@ -97,21 +115,19 @@ public class MijnEersteHuiswerkOpdracht {
     }
 
     //punt naar rechts
-    void printPyramideMetPuntNaarRechtsVanTweeKolommen(){
+    void print2DPyramideMetPuntNaarRechtsVanTweeKolommen(){
         System.out.println("+");
         System.out.println("++");
         System.out.println("+");
     }
-
-    void printPyramideMetPuntNaarRechtsVanDrieKolommen(){
+    void print2DPyramideMetPuntNaarRechtsVanDrieKolommen(){
         System.out.println("+");
         System.out.println("++");
         System.out.println("+++");
         System.out.println("++");
         System.out.println("+");
     }
-
-    void printPyramideMetPuntNaarRechtsVanVijfKolommen(){
+    void print2DPyramideMetPuntNaarRechtsVanVijfKolommen(){
         System.out.println("+");
         System.out.println("++");
         System.out.println("+++");
@@ -124,21 +140,19 @@ public class MijnEersteHuiswerkOpdracht {
     }
 
     //punt naar links
-    void printPyramideMetPuntNaarLinksVanTweeKolommen(){
+    void print2DPyramideMetPuntNaarLinksVanTweeKolommen(){
         System.out.println(" +");
         System.out.println("++");
         System.out.println(" +");
     }
-
-    void printPyramideMetPuntNaarLinksVanDrieKolommen(){
+    void print2DPyramideMetPuntNaarLinksVanDrieKolommen(){
         System.out.println("  +");
         System.out.println(" ++");
         System.out.println("+++");
-        System.out.println("  ++");
-        System.out.println(" +");
+        System.out.println(" ++");
+        System.out.println("  +");
     }
-
-    void printPyramideMetPuntNaarLinksVanVijfKolommen(){
+    void print2DPyramideMetPuntNaarLinksVanVijfKolommen(){
         System.out.println("    +");
         System.out.println("   ++");
         System.out.println("  +++");
@@ -148,5 +162,63 @@ public class MijnEersteHuiswerkOpdracht {
         System.out.println("  +++");
         System.out.println("   ++");
         System.out.println("    +");
+    }
+
+    //holle pyramides gevulde achtergrond
+    //punt naar boven
+    void print2DHollePyramideGevuldeAchtergrondMetPuntNaarBovenVanTweeNiveaus() {
+        System.out.println("+++++");
+        System.out.println("++ ++");
+        System.out.println("+   +");
+        System.out.println("+++++");
+    }
+
+    void print2DHollePyramideGevuldeAchterGrondMetPuntNaarBovenVanDrieNiveaus() {
+        System.out.println("+++++++");
+        System.out.println("+++ +++");
+        System.out.println("++   ++");
+        System.out.println("+     +");
+        System.out.println("+++++++");
+    }
+
+    void print2DHollePyramideGevuldeAchterGrondMetPuntNaarBovenVanVijfNiveaus() {
+        System.out.println("+++++++++++");
+        System.out.println("+++++ +++++");
+        System.out.println("++++   ++++");
+        System.out.println("+++     +++");
+        System.out.println("++       ++");
+        System.out.println("+         +");
+        System.out.println("+++++++++++");
+    }
+
+    //punt naar rechts
+    void print2DHollePyramideGevuldeAchtergrondMetPuntNaarRechtsVanTweeNiveaus() {
+        System.out.println("++++");
+        System.out.println("+ ++");
+        System.out.println("+  +");
+        System.out.println("+ ++");
+        System.out.println("++++");
+    }
+
+    void print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanDrieNiveaus() {
+        System.out.println("+++++");
+        System.out.println("+ +++");
+        System.out.println("+  ++");
+        System.out.println("+   +");
+        System.out.println("+  ++");
+        System.out.println("+ +++");
+        System.out.println("+++++");
+    }
+
+    void print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanVijfNiveaus() {
+        System.out.println("++++++");
+        System.out.println("+ ++++");
+        System.out.println("+  +++");
+        System.out.println("+   ++");
+        System.out.println("+    +");
+        System.out.println("+   ++");
+        System.out.println("+  +++");
+        System.out.println("+ ++++");
+        System.out.println("++++++");
     }
 }
