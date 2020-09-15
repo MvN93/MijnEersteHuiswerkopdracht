@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class MijnEersteHuiswerkOpdracht {
 
-    //Test die drie simpele pyramides met punt naar boven print in verschillende niveaus
+    //Tests die drie simpele pyramides met punt naar boven, beneden, rechts en links printen in verschillende niveaus en kolommen
     @Test
     void Print2DPyramidesMetPuntNaarBovenVanTweeDrieEnVijfNiveaus(){
         printPyramideMetPuntNaarBovenVanTweeNiveaus();
@@ -28,11 +28,26 @@ public class MijnEersteHuiswerkOpdracht {
     }
 
     @Test
-    void Print2DPyramidesMetPuntNaarRechtsVanTweeDrieEnVijfNiveaus(){
+    void Print2DPyramidesMetPuntNaarRechtsVanTweeDrieEnVijfKolommen(){
+        printPyramideMetPuntNaarRechtsVanTweeKolommen();
+        voegWitRegelToe();
+
+        printPyramideMetPuntNaarRechtsVanDrieKolommen();
+        voegWitRegelToe();
+
+        printPyramideMetPuntNaarRechtsVanVijfKolommen();
     }
 
+
     @Test
-    void Print2DPyramidesMetPuntNaarLinksVanTweeDrieEnVijfNiveaus(){
+    void Print2DPyramidesMetPuntNaarLinksVanTweeDrieEnVijfKolommen(){
+        printPyramideMetPuntNaarLinksVanTweeKolommen();
+        voegWitRegelToe();
+
+        printPyramideMetPuntNaarLinksVanDrieKolommen();
+        voegWitRegelToe();
+
+        printPyramideMetPuntNaarLinksVanVijfKolommen();
 
     }
 
@@ -79,5 +94,59 @@ public class MijnEersteHuiswerkOpdracht {
         System.out.println("  +++++  ");
         System.out.println("   +++   ");
         System.out.println("    +    ");
+    }
+
+    //punt naar rechts
+    void printPyramideMetPuntNaarRechtsVanTweeKolommen(){
+        System.out.println("+");
+        System.out.println("++");
+        System.out.println("+");
+    }
+
+    void printPyramideMetPuntNaarRechtsVanDrieKolommen(){
+        System.out.println("+");
+        System.out.println("++");
+        System.out.println("+++");
+        System.out.println("++");
+        System.out.println("+");
+    }
+
+    void printPyramideMetPuntNaarRechtsVanVijfKolommen(){
+        System.out.println("+");
+        System.out.println("++");
+        System.out.println("+++");
+        System.out.println("++++");
+        System.out.println("+++++");
+        System.out.println("++++");
+        System.out.println("+++");
+        System.out.println("++");
+        System.out.println("+");
+    }
+
+    //punt naar links
+    void printPyramideMetPuntNaarLinksVanTweeKolommen(){
+        System.out.println(" +");
+        System.out.println("++");
+        System.out.println(" +");
+    }
+
+    void printPyramideMetPuntNaarLinksVanDrieKolommen(){
+        System.out.println("  +");
+        System.out.println(" ++");
+        System.out.println("+++");
+        System.out.println("  ++");
+        System.out.println(" +");
+    }
+
+    void printPyramideMetPuntNaarLinksVanVijfKolommen(){
+        System.out.println("    +");
+        System.out.println("   ++");
+        System.out.println("  +++");
+        System.out.println(" ++++");
+        System.out.println("+++++");
+        System.out.println(" ++++");
+        System.out.println("  +++");
+        System.out.println("   ++");
+        System.out.println("    +");
     }
 }
