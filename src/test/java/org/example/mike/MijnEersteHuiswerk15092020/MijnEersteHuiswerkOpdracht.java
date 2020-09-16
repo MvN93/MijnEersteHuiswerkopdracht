@@ -2,6 +2,8 @@ package org.example.mike.MijnEersteHuiswerk15092020;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 public class MijnEersteHuiswerkOpdracht {
 
     //Tests die drie simpele pyramides met punt naar boven, beneden, rechts en links printen in verschillende niveaus en kolommen
@@ -15,7 +17,6 @@ public class MijnEersteHuiswerkOpdracht {
 
         print2DPyramideMetPuntNaarBovenVanVijfNiveaus();
     }
-
     @Test
     void Print2DPyramidesMetPuntNaarBenedenVanTweeDrieEnVijfNiveaus(){
         print2DPyramideMetPuntNaarBenedenVanTweeNiveaus();
@@ -26,7 +27,6 @@ public class MijnEersteHuiswerkOpdracht {
 
         print2DPyramideMetPuntNaarBenedenVanVijfNiveaus();
     }
-
     @Test
     void Print2DPyramidesMetPuntNaarRechtsVanTweeDrieEnVijfKolommen(){
         print2DPyramideMetPuntNaarRechtsVanTweeKolommen();
@@ -37,7 +37,6 @@ public class MijnEersteHuiswerkOpdracht {
 
         print2DPyramideMetPuntNaarRechtsVanVijfKolommen();
     }
-
     @Test
     void Print2DPyramidesMetPuntNaarLinksVanTweeDrieEnVijfKolommen(){
         print2DPyramideMetPuntNaarLinksVanTweeKolommen();
@@ -49,7 +48,7 @@ public class MijnEersteHuiswerkOpdracht {
         print2DPyramideMetPuntNaarLinksVanVijfKolommen();
     }
 
-    //Tests die drie simpele holle pyramides op gevulde achtergrond met punt naar boven printen in verschillende niveaus en kolommen
+    //Tests die drie simpele holle pyramides op gevulde achtergrond met punt naar boven, rechts printen in verschillende niveaus en kolommen
     @Test
     void PrintHolle2DPyramidesGevuldeAchtergrondMetPuntNaarBovenVanTweeDrieEnVijfNiveaus(){
         print2DHollePyramideGevuldeAchtergrondMetPuntNaarBovenVanTweeNiveaus();
@@ -71,11 +70,72 @@ public class MijnEersteHuiswerkOpdracht {
         print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanVijfNiveaus();
     }
 
+    //Test
+    @Test
+    void maaktEenPyramideMetPuntNaarBovenVanIngevuldeAantalNiveausMetIngevuldeSymbool() {
 
+        int aantalRegels = vraagOmInvoerVanEenGeheelGetalVoorBepalenAantalRijenOfKolommen("Uit hoe veel niveaus wilt u dat de pyramide bestaat?");
+
+        String symboolPyramide = vraagOmInvoerVanEenSymbool("Uit welk symbool wilt u dat de pyramide bestaat?");
+
+        tekenEenPyramideMetPuntNaarBovenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(aantalRegels, symboolPyramide);
+    }
 
     //Methodes
-    void voegWitRegelToe(){
+    int vraagOmInvoerVanEenGeheelGetalVoorBepalenAantalRijenOfKolommen(String invoerBericht){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(invoerBericht);
+        int ingevoerdGeheelGetal = scanner.nextInt();
+        return ingevoerdGeheelGetal;
+    }
+
+    String vraagOmInvoerVanEenSymbool(String invoerBericht){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(invoerBericht);
+        String ingevoerdSymbool = scanner.next();
+        return ingevoerdSymbool;
+    }
+
+    void tekenEenPyramideMetPuntNaarBovenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(int totaalAantalRegels, String symboolPyramide){
+        //Note we beginnen bij 1; eerste regel is dan 1
+        System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalRegels + " niveaus:");
+        for (int regel = 1; regel <= totaalAantalRegels; regel = regel + 1) {
+            tekenEenRegelVanDePyramideMetPuntNaarBoven(regel, totaalAantalRegels, symboolPyramide);
+        }
+    }
+
+    /*
+    void tekenEenPyramideMetPuntNaarBenedenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(int totaalAantalRegels, String symboolPyramide){
+        System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalRegels + " niveaus:");
+        for (int regel = 1; regel <= totaalAantalRegels; regel = regel + 1) {
+            tekenEenRegelVanDePyramideMetPuntNaarBoven(regel, totaalAantalRegels, symboolPyramide);
+        }
+    }
+  */
+
+    void tekenEenRegelVanDePyramideMetPuntNaarBoven(int regel, int totaalAantalRegels, String symboolPyramide){
+        //het aantal spaties links van de pyramide is gelijk aan het aantal regels min de regel op welke de loop is
+        for (int index = 0; index < (totaalAantalRegels - regel); index = index + 1) {
+            System.out.print(" ");
+        }
+
+        //het aantal plusjes is hetzelfde als de regel op welke de loop is
+        for (int index = 0; index < regel; index = index + 1) {
+            System.out.print(symboolPyramide);
+            System.out.print(" ");
+        }
+
+        //rechts hetzelfde als links van de pyramide
+        for (int index = 0; index < (totaalAantalRegels - regel); index = index + 1) {
+            System.out.print(" ");
+        }
+
+        //linebreak
         System.out.println("");
+    }
+
+    void voegWitRegelToe(){
+        System.out.println();
     }
 
     //punt naar boven
@@ -220,5 +280,46 @@ public class MijnEersteHuiswerkOpdracht {
         System.out.println("+  +++");
         System.out.println("+ ++++");
         System.out.println("++++++");
+    }
+
+    //----------------------------------------------------------------------------------------------------------------
+    //Appendix
+    //----------------------------------------------------------------------------------------------------------------
+    //hier staan de originele tests om pyramides aan te maken voordat methodes zijn gebruikt om het leesbaarder te maken
+    //----------------------------------------------------------------------------------------------------------------
+    @Test
+    void maaktEenPyramideMetPuntNaarBovenVanIngevuldeAantalNiveausMetIngevuldeSymboolOrigineleVersie() {
+        Scanner scanner = new Scanner(System.in);
+
+        //vraagt om aantal regels en legt deze vast als variabele
+        System.out.println("Uit hoe veel niveaus wilt u dat de pyramide bestaat?");
+        int aantalRegels = scanner.nextInt();
+
+        //vraagt om symbool en legt deze vast als variabele
+        System.out.println("Uit welk symbool wilt u dat de pyramide bestaat?");
+        String symboolPyramide = scanner.next();
+
+        //Note we beginnen bij 1; eerste regel is dan 1
+        System.out.println("Dit is de aangevraagde pyramide van " + aantalRegels + " lagen.");
+        for (int regel = 1; regel <= aantalRegels; regel = regel + 1) {
+            //het aantal spaties links van de pyramide is gelijk aan het aantal regels min de regel op welke de loop is
+            for (int index = 0; index < (aantalRegels - regel); index = index + 1) {
+                System.out.print(" ");
+            }
+
+            //het aantal plusjes is hetzelfde als de regel op welke de loop is
+            for (int index = 0; index < regel; index = index + 1) {
+                System.out.print(symboolPyramide);
+                System.out.print(" ");
+            }
+
+            //rechts hetzelfde als links van de pyramide
+            for (int index = 0; index < (aantalRegels - regel); index = index + 1) {
+                System.out.print(" ");
+            }
+
+            //linebreak
+            System.out.println("");
+        }
     }
 }
