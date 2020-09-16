@@ -91,6 +91,16 @@ public class MijnEersteHuiswerkOpdracht {
         tekenEenPyramideMetPuntNaarBenedenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(aantalRegels, symboolPyramide);
     }
 
+    @Test
+    void maaktEenPyramideMetPuntNaarRechtsVanIngevuldeAantalKolommen(){
+        int aantalKolommen = vraagOmInvoerVanEenGeheelGetalVoorBepalenAantalRijenOfKolommen("Uit hoe veel kolommen wilt u dat de pyramide bestaat?");
+
+        String symboolPyramide = vraagOmInvoerVanEenSymbool("Uit welk symbool wilt u dat de pyramide bestaat?");
+
+        tekenEenPyramideMetPuntNaarRechtsMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(aantalKolommen,symboolPyramide);
+    }
+
+    //-----------------------------------------------------------
     //Methodes
     int vraagOmInvoerVanEenGeheelGetalVoorBepalenAantalRijenOfKolommen(String invoerBericht){
         Scanner scanner = new Scanner(System.in);
@@ -114,11 +124,19 @@ public class MijnEersteHuiswerkOpdracht {
         }
     }
 
-
     void tekenEenPyramideMetPuntNaarBenedenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(int totaalAantalRegels, String symboolPyramide){
         System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalRegels + " niveaus:");
         for (int regel = totaalAantalRegels; regel >= 1; regel = regel - 1) {
             tekenEenRegelVanDePyramideMetPuntNaarBovenOfBeneden(regel, totaalAantalRegels, symboolPyramide);
+        }
+    }
+
+    void tekenEenPyramideMetPuntNaarRechtsMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(int totaalAantalKolommen, String symboolPyramide){
+        System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalKolommen + " kolommen:");
+        int aantalRegels = (totaalAantalKolommen * 2) - 1;
+
+        for (int regel = aantalRegels; regel >= 1; regel = regel - 1) {
+            tekenEenRegelVanDePyramideMetPuntNaarRechts(regel, aantalRegels, symboolPyramide);
         }
     }
 
@@ -141,6 +159,26 @@ public class MijnEersteHuiswerkOpdracht {
             System.out.print(" ");
         }
 
+        //linebreak
+        System.out.println("");
+    }
+
+    void tekenEenRegelVanDePyramideMetPuntNaarRechts(int regel, int totaalAantalRegels, String symboolPyramide){
+        //tot en met de punt van het driehoek (op de helft) neemt het aantal plusjes toe
+        if(regel <= (Math.ceil(totaalAantalRegels/2))) {
+            //het aantal plusjes is hetzelfde als de regel op welke de loop is
+            for (int index = 0; index < regel; index = index + 1) {
+                System.out.print(symboolPyramide);
+                System.out.print(" ");
+            }
+        }
+        else if(regel > (totaalAantalRegels/2)) {
+            //afnemende aantal plusjes vanaf de punt
+            for (int index = 0; index <= (totaalAantalRegels - regel); index = index + 1) {
+                System.out.print(symboolPyramide);
+                System.out.print(" ");
+            }
+        }
         //linebreak
         System.out.println("");
     }
@@ -329,6 +367,38 @@ public class MijnEersteHuiswerkOpdracht {
                 System.out.print(" ");
             }
 
+            //linebreak
+            System.out.println("");
+        }
+    }
+
+    @Test
+    void makenVanLiggendeDriehoek(){
+        Scanner scanner2 = new Scanner(System.in);
+
+        //vraagt om aantal regels en legt deze vast als variabele
+        System.out.println("Uit hoe veel regels wilt u dat de liggende driehoek bestaat?");
+        int aantalRegel =scanner2.nextInt();
+
+        //Note we beginnen bij 1; eerste regel is dan 1
+        System.out.println("Dit is de aangevraagde liggende driehoek van " + aantalRegel + " lagen.");
+        for(int regel = 1; regel <= aantalRegel; regel = regel + 1)
+        {
+            //tot en met de punt van het driehoek neemt het aantal plusjes toe
+            if(regel <= (Math.ceil(aantalRegel/2))) {
+                //het aantal plusjes is hetzelfde als de regel op welke de loop is
+                for (int index = 0; index < regel; index = index + 1) {
+                    System.out.print("+");
+                    System.out.print(" ");
+                }
+            }
+            else if(regel > (aantalRegel/2)) {
+                //afnemende aantal plusjes vanaf de punt
+                for (int index = 0; index <= (aantalRegel - regel); index = index + 1) {
+                    System.out.print("+");
+                    System.out.print(" ");
+                }
+            }
             //linebreak
             System.out.println("");
         }
