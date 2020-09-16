@@ -70,7 +70,7 @@ public class MijnEersteHuiswerkOpdracht {
         print2DHollePyramideGevuldeAchterGrondMetPuntNaarRechtsVanVijfNiveaus();
     }
 
-    //Test
+    //Tests
     @Test
     void maaktEenPyramideMetPuntNaarBovenVanIngevuldeAantalNiveausMetIngevuldeSymbool() {
 
@@ -79,6 +79,16 @@ public class MijnEersteHuiswerkOpdracht {
         String symboolPyramide = vraagOmInvoerVanEenSymbool("Uit welk symbool wilt u dat de pyramide bestaat?");
 
         tekenEenPyramideMetPuntNaarBovenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(aantalRegels, symboolPyramide);
+    }
+
+    @Test
+    void maaktEenPyramideMetPuntNaarBenedenVanIngevuldeAantalNiveausMetIngevuldeSymbool() {
+
+        int aantalRegels = vraagOmInvoerVanEenGeheelGetalVoorBepalenAantalRijenOfKolommen("Uit hoe veel niveaus wilt u dat de pyramide bestaat?");
+
+        String symboolPyramide = vraagOmInvoerVanEenSymbool("Uit welk symbool wilt u dat de pyramide bestaat?");
+
+        tekenEenPyramideMetPuntNaarBenedenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(aantalRegels, symboolPyramide);
     }
 
     //Methodes
@@ -100,21 +110,22 @@ public class MijnEersteHuiswerkOpdracht {
         //Note we beginnen bij 1; eerste regel is dan 1
         System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalRegels + " niveaus:");
         for (int regel = 1; regel <= totaalAantalRegels; regel = regel + 1) {
-            tekenEenRegelVanDePyramideMetPuntNaarBoven(regel, totaalAantalRegels, symboolPyramide);
+            tekenEenRegelVanDePyramideMetPuntNaarBovenOfBeneden(regel, totaalAantalRegels, symboolPyramide);
         }
     }
 
-    /*
+
     void tekenEenPyramideMetPuntNaarBenedenMetIngevoerdeSymboolEnVanIngevoerdeAantalRegels(int totaalAantalRegels, String symboolPyramide){
         System.out.println("Dit is de aangevraagde pyramide van " + totaalAantalRegels + " niveaus:");
-        for (int regel = 1; regel <= totaalAantalRegels; regel = regel + 1) {
-            tekenEenRegelVanDePyramideMetPuntNaarBoven(regel, totaalAantalRegels, symboolPyramide);
+        for (int regel = totaalAantalRegels; regel >= 1; regel = regel - 1) {
+            tekenEenRegelVanDePyramideMetPuntNaarBovenOfBeneden(regel, totaalAantalRegels, symboolPyramide);
         }
     }
-  */
 
-    void tekenEenRegelVanDePyramideMetPuntNaarBoven(int regel, int totaalAantalRegels, String symboolPyramide){
-        //het aantal spaties links van de pyramide is gelijk aan het aantal regels min de regel op welke de loop is
+
+    void tekenEenRegelVanDePyramideMetPuntNaarBovenOfBeneden(int regel, int totaalAantalRegels, String symboolPyramide){
+        //het aantal spaties links van de pyramide
+        // is gelijk aan het aantal regels min de regel op welke de loop is
         for (int index = 0; index < (totaalAantalRegels - regel); index = index + 1) {
             System.out.print(" ");
         }
